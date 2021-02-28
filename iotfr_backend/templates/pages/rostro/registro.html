@@ -1,0 +1,36 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<h4><strong>1)</strong> Ingrese su nombre y apellido</h4>
+<h4><strong>2)</strong> Sitúese frente a la cámara IP, mírela de frente para empezar a tomar fotografías</h4>
+<h4><strong>3)</strong> Finalmente presione el botón "Comenzar a escanear" hasta que se complete el registro</h4>
+<br>
+<form action="" method="post">
+  {% csrf_token %}
+
+  <div class="form-group row">
+    <label for="staticEmail" class="col-sm-2 col-form-label">Nombre</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="txtNombre" name="nombre" placeholder="Ingrese nombre">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputPassword" class="col-sm-2 col-form-label">Apellido</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="txtApellido" name="apellido" placeholder="Ingrese apellido">
+    </div>
+  </div>
+  <div class="col-sm-10">
+    <input class="btn btn-info" type="submit" value="Comenzar a escanear">
+  </div>
+
+  {% if response == 200 %}
+  <script>
+	success();
+	function success() {
+	  alert("Resgistro de rostro satisfactorio !!!");
+	}
+</script>
+  {% endif %}
+</form>
+{% endblock content %}

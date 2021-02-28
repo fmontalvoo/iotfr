@@ -1,0 +1,57 @@
+{% extends 'index.html' %}
+
+{% block content %}
+{% if request.user.is_staff %}
+<a href="{% url 'usuario:crear' %}" class="btn btn-success">Crear</a>
+<br>
+<br>
+{% if usuarios %}
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            <th>Teléfono</th>
+            <th>Sitio</th>
+            <th>Operaciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for usuario in usuarios %}
+        <tr>
+            <td>{{usuario.id}}</td>
+            <td>{{usuario.username}}</td>
+            <td>{{usuario.nombres}}</td>
+            <td>{{usuario.apellidos}}</td>
+            <td>{{usuario.telefono}}</td>
+            <td>{{usuario.sitio}}</td>
+            <td>
+                <a href="{% url 'usuario:editar' usuario.id %}" class="btn btn-primary">Editar</a>
+                <a href="{% url 'usuario:eliminar' usuario.id %}" class="btn btn-warning">Eliminar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    No existen registros de usuarios
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{% endif %}
+
+{% else %}
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    No cuenta con los permisos necesarios para acceder a esta página
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{% endif %}
+
+
+{% endblock content %}

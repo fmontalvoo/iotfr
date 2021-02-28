@@ -1,0 +1,23 @@
+{% extends 'index.html' %}
+
+{% block content %}
+{% if request.user.is_staff %}
+<form action="#" method="POST">
+    {% csrf_token %}
+    {% if error %}
+    <h2 class="danger">{{error}}</h2>
+    {% else %}
+    <h1 class="danger">¿Desea eliminar a {{object}}?</h1>
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+    <a href="{% url 'usuario:listar' %}" class="btn btn-warning">Cancelar</a>
+    {% endif %}
+</form>
+{% else %}
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    No cuenta con los permisos necesarios para acceder a esta página
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{% endif %}
+{% endblock content %}

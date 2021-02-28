@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Estilos de bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+    <!-- Estilos estaticos -->
+    <link rel="stylesheet" href="{% static 'css/sidebar.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'css/navbar.css' %}"> -->
+    <link rel="stylesheet" href="{% static 'css/content.css' %}">
+    {% block stlyles %}
+    {% endblock stlyles %}
+
+    <!-- Icono de la pagina -->
+    <link rel="icon" href="{% static 'img/favicon.png' %}">
+
+    <!-- Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>IOTFR</title>
+</head>
+
+<body>
+    {% block body %}
+    <!-- {% include 'components/navbar.html' %} -->
+    {% include 'components/sidebar.html' %}
+
+    <section id="contenido" class="content">
+        {% block content %}
+        <div>
+            <p align="center">
+                <img src="{% static 'img/qualtronic.png' %}" height="512" alt="qualtronic.png">
+            </p>
+            <p align="center">
+            <div>
+                <p align="justify">
+                    QUAL-TRONIC Domótica & Seguridad. Hace posible que la Seguridad, Control y Confort de tu casa o
+                    negocio
+                    esté al alcance de tus manos. Puedes controlar todos los dispositivos instalados en todo momento y
+                    desde
+                    cualquier parte del mundo mediante una aplicación móvil o con un solo click de tu computador.
+                    <br><br>
+                    Contactos:
+                </p>
+                <p align="center">
+                    Telfs: <br>
+                    <a href="tel:+593987949069">+593 987 949 069</a><br>
+                    <a href="tel:+593996344570">+593 996 344 570</a>
+                </p>
+                <p align="center">
+                    <strong>Correo: </strong><a
+                        href="mailto:qualtronic.ec@gmail.com?subject=Escriba su asunto">qualtronic.ec@gmail.com</a><br>
+                    <strong>Web: </strong><a href="https://www.qualtronic.ec" target="_blank">www.qualtronic.ec</a>
+                </p>
+            </div>
+            </p>
+        </div>
+        {% endblock content %}
+    </section>
+
+    {% endblock body %}
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    {% block scripts %}
+    {% endblock scripts %}
+</body>
+
+</html>

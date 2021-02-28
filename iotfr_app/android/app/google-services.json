@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "494877348203",
+    "firebase_url": "https://tesis-2c222.firebaseio.com",
+    "project_id": "tesis-2c222",
+    "storage_bucket": "tesis-2c222.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:494877348203:android:499b7c04f742cdcda4fc2e",
+        "android_client_info": {
+          "package_name": "ups.edu.ec.iotfr_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "494877348203-0bu285e4577tbsqtjafggrol7u84kti3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ups.edu.ec.iotfr_app",
+            "certificate_hash": "9dd727497c74d8d64f2c26b811d184baa1493519"
+          }
+        },
+        {
+          "client_id": "494877348203-aq6ke6bbo79d03nhlu8p1voveh205gai.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5cG_aaq5Km1xTBtg9VKWXhMG8lPghcgI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "494877348203-aq6ke6bbo79d03nhlu8p1voveh205gai.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

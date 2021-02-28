@@ -1,0 +1,16 @@
+{% load static %}
+<section id="menu_lateral">
+    <div class="sidebar">
+        <a href="{% url 'usuario:inicio' %}">
+            <img src="{% static 'img/logo.png' %}" height="64" alt="logo.png">
+        </a>
+        <hr>
+        <a href="{% url 'usuario:inicio' %}"><i class="fa fa-fw fa-home"></i>Inicio</a>
+        <a href="{% url 'rostro:registro' %}"><i class="fa fa-fw fa-smile-o"></i>Registro de rostro</a>
+        {% if request.user.is_staff %}
+        <a href="{% url 'usuario:listar' %}"><i class="fa fa-fw fa-user-circle"></i>Gestión de usuarios</a>
+        {% endif %}
+        <a href="{% url 'historial:listar' %}"><i class="fa fa-fw fa-history"></i>Historial</a>
+        <a href="{% url 'usuario:logout' %}"><i class="fa fa-fw fa-sign-out"></i>Salir</a>
+    </div>
+</section>

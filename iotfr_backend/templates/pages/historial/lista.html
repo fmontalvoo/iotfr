@@ -1,0 +1,33 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+{% if registros %}
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre y Apellido</th>
+            <th>Fecha</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for registro in registros %}
+        <tr>
+            <td>{{registro.id}}</td>
+            <td>{{registro.nombre_apellido}}</td>
+            <td>{{registro.fecha}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    No existen registros
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{% endif %}
+
+{% endblock content %}
